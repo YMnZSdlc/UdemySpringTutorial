@@ -29,7 +29,8 @@ class HelloService {
             langId = FALLBACK_LANG.getId();
         }
         var welcomeMsg = repository.findById(langId).orElse(FALLBACK_LANG).getWelcomeMsg();
+        var langCode = repository.findById(langId).orElse(FALLBACK_LANG).getCode();
         var nameToWelcome = Optional.ofNullable(name).orElse(FALLBACK_NAME);
-        return welcomeMsg + " " + nameToWelcome + "!";
+        return welcomeMsg + " " + nameToWelcome + "! Lang code: " + langCode;
     }
 }

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "languages")
+@Table(name = "LANGUAGES")
 class Lang {
     @Id
     @GeneratedValue(generator = "inc")
@@ -22,7 +22,7 @@ class Lang {
     * Hibernate (JPA) needs it.
     * */
     @SuppressWarnings("unused")
-    public Lang(){}
+    Lang(){}
 
     public Lang(Integer id, String welcomeMsg, String code) {
         this.id = id;
