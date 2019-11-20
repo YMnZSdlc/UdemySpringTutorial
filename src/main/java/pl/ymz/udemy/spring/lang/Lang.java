@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring;
+package pl.ymz.udemy.spring.lang;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LANGUAGES")
-class Lang {
+@Table(name = "languages")
+public class Lang {
     @Id
     @GeneratedValue(generator = "inc")
     @GenericGenerator(name = "inc", strategy = "increment")
@@ -18,11 +18,12 @@ class Lang {
     private String welcomeMsg;
     private String code;
 
-    /*
-    * Hibernate (JPA) needs it.
-    * */
+    /**
+     * Hibernate (JPA) needs it.
+     */
     @SuppressWarnings("unused")
-    Lang(){}
+    Lang(){
+    }
 
     public Lang(Integer id, String welcomeMsg, String code) {
         this.id = id;

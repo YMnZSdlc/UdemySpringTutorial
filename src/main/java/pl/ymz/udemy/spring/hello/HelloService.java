@@ -1,7 +1,9 @@
-package pl.ymz.udemy.spring;
+package pl.ymz.udemy.spring.hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.ymz.udemy.spring.lang.Lang;
+import pl.ymz.udemy.spring.lang.LangRepository;
 
 import java.util.Optional;
 
@@ -24,13 +26,12 @@ class HelloService {
         Integer langId;
         try {
             langId = Optional.ofNullable(lang).map(Integer::valueOf).orElse(FALLBACK_LANG.getId());
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             logger.warn("Non-numeric language id used: " + lang);
             langId = FALLBACK_LANG.getId();
         }
         var welcomeMsg = repository.findById(langId).orElse(FALLBACK_LANG).getWelcomeMsg();
-        var langCode = repository.findById(langId).orElse(FALLBACK_LANG).getCode();
         var nameToWelcome = Optional.ofNullable(name).orElse(FALLBACK_NAME);
-        return welcomeMsg + " " + nameToWelcome + "! Lang code: " + langCode;
+        return welcomeMsg + " " + nameToWelcome + "!";
     }
 }

@@ -1,6 +1,9 @@
-package pl.ymz.udemy.spring;
+package pl.ymz.udemy.spring.hello;
 
 import org.junit.Test;
+import pl.ymz.udemy.spring.hello.HelloService;
+import pl.ymz.udemy.spring.lang.Lang;
+import pl.ymz.udemy.spring.lang.LangRepository;
 
 import java.util.Optional;
 
@@ -44,7 +47,7 @@ public class HelloServiceTest {
         // given
         var mockRepository = new LangRepository(){
             @Override
-            Optional<Lang> findById(Integer id) {
+            public Optional<Lang> findById(Integer id) {
                 return Optional.empty();
             }
         };
@@ -86,7 +89,7 @@ public class HelloServiceTest {
     private LangRepository fallbackIdRepository() {
         return new LangRepository(){
             @Override
-            Optional<Lang> findById(Integer id) {
+            public Optional<Lang> findById(Integer id) {
                 if(id.equals(HelloService.FALLBACK_LANG.getId())){
                     return Optional.of(new Lang(null, FALLBACK_ID_WELCOME,null));
                 }
@@ -99,7 +102,7 @@ public class HelloServiceTest {
     private LangRepository alwaysReturningHelloRepository() {
         return new LangRepository() {
             @Override
-            Optional<Lang> findById(Integer id) {
+            public Optional<Lang> findById(Integer id) {
                 return Optional.of(new Lang(null, HELLO, null));
             }
         };
