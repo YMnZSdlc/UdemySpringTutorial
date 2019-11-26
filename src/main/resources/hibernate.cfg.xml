@@ -33,6 +33,7 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="pl.ymz.udemy.spring.lang.Lang"/>
+        <mapping class="pl.ymz.udemy.spring.todo.Todo"/>
 
     </session-factory>
 
