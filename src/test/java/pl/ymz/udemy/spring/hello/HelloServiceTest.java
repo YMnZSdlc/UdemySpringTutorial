@@ -22,7 +22,7 @@ public class HelloServiceTest {
         var SUT = new HelloService(mockRepository); // System Under Test = SUT
 
         // when
-        var result = SUT.prepareGreeting(null, "-1");
+        var result = SUT.prepareGreeting(null, -1);
 
         // then
         assertEquals(HELLO + " " + HelloService.FALLBACK_NAME + "!", result);
@@ -36,7 +36,7 @@ public class HelloServiceTest {
         var name = "TestName";
 
         // when
-        var result = SUT.prepareGreeting(name, "-1");
+        var result = SUT.prepareGreeting(name, -1);
 
         // then
         assertEquals(HELLO + " " + name + "!", result);
@@ -54,7 +54,7 @@ public class HelloServiceTest {
         var SUT = new HelloService(mockRepository); // System Under Test = SUT
 
         // when
-        var result = SUT.prepareGreeting(null, "-1");
+        var result = SUT.prepareGreeting(null, -1);
 
         // then
         assertEquals(HelloService.FALLBACK_LANG.getWelcomeMsg() + " " + HelloService.FALLBACK_NAME + "!", result);
@@ -73,18 +73,18 @@ public class HelloServiceTest {
         assertEquals(FALLBACK_ID_WELCOME + " " + HelloService.FALLBACK_NAME + "!", result);
     }
 
-    @Test
-    public void test_prepareGreeting_textLang_returnsGreetingWithFallbackIdLang() {
-        // given
-        var mockRepository = fallbackIdRepository();
-        var SUT = new HelloService(mockRepository); // System Under Test = SUT
-
-        // when
-        var result = SUT.prepareGreeting(null, "abc");
-
-        // then
-        assertEquals(FALLBACK_ID_WELCOME + " " + HelloService.FALLBACK_NAME + "!", result);
-    }
+//    @Test
+//    public void test_prepareGreeting_textLang_returnsGreetingWithFallbackIdLang() {
+//        // given
+//        var mockRepository = fallbackIdRepository();
+//        var SUT = new HelloService(mockRepository); // System Under Test = SUT
+//
+//        // when
+//        var result = SUT.prepareGreeting(null, "abc");
+//
+//        // then
+//        assertEquals(FALLBACK_ID_WELCOME + " " + HelloService.FALLBACK_NAME + "!", result);
+//    }
 
     private LangRepository fallbackIdRepository() {
         return new LangRepository(){
