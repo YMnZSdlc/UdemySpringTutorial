@@ -17,7 +17,7 @@ class TodoRepository {
         return result;
     }
 
-    public Todo toggleTodo(Integer id) {
+    Todo toggleTodo(Integer id) {
         var session = HibernateUtil.getSessionFactory().openSession();
         var transaction = session.beginTransaction();
 
@@ -27,6 +27,17 @@ class TodoRepository {
         transaction.commit();
         session.close();
         return result;
+    }
+
+    Todo addTodo(Todo newTodo) {
+        var session = HibernateUtil.getSessionFactory().openSession();
+        var transaction = session.beginTransaction();
+
+        session.persist(newTodo);
+
+        transaction.commit();
+        session.close();
+        return newTodo;
     }
 
 
