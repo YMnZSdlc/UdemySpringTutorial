@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring.todo;
+package pl.ymz.udemystart.todo;
 
 import org.hibernate.annotations.GenericGenerator;
 

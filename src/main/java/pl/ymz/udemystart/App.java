@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring;
+package pl.ymz.udemystart;
 
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.plus.webapp.EnvConfiguration;
@@ -24,9 +24,9 @@ public class App {
                 new JettyWebXmlConfiguration()
         });
         webapp.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern", ".*/classes/.*"); //skanowanie po adnotacjach
-//        webapp.addServlet(HelloServlet.class, "/api/*"); //konkretny serwlet ze ścieżką bez skanowania
+//        webapp.addServlet(HelloServlet.class, "/api/*"); //konkretny servlet ze ścieżką bez skanowania
 
-        var server = new Server(8080);
+        var server = new Server(8087);
         server.setHandler(webapp);
 
         server.addLifeCycleListener(new AbstractLifeCycle.AbstractLifeCycleListener() {

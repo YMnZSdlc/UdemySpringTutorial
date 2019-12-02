@@ -1,6 +1,6 @@
-package pl.ymz.udemy.spring.todo;
+package pl.ymz.udemystart.todo;
 
-import pl.ymz.udemy.spring.HibernateUtil;
+import pl.ymz.udemystart.HibernateUtil;
 
 import java.util.List;
 

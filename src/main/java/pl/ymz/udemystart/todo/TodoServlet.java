@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring.todo;
+package pl.ymz.udemystart.todo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

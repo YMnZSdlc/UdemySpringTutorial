@@ -1,9 +1,8 @@
-package pl.ymz.udemy.spring.hello;
+package pl.ymz.udemystart.hello;
 
 import org.junit.Test;
-import pl.ymz.udemy.spring.hello.HelloService;
-import pl.ymz.udemy.spring.lang.Lang;
-import pl.ymz.udemy.spring.lang.LangRepository;
+import pl.ymz.udemystart.lang.Lang;
+import pl.ymz.udemystart.lang.LangRepository;
 
 import java.util.Optional;
 

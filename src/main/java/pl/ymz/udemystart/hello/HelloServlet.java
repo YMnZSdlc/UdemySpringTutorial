@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring.hello;
+package pl.ymz.udemystart.hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

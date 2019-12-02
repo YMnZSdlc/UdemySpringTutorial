@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring.lang;
+package pl.ymz.udemystart.lang;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

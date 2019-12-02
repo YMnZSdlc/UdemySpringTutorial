@@ -1,4 +1,4 @@
-package pl.ymz.udemy.spring;
+package pl.ymz.udemystart;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

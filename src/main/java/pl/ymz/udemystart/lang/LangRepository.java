@@ -1,7 +1,7 @@
-package pl.ymz.udemy.spring.lang;
+package pl.ymz.udemystart.lang;
 
 
-import pl.ymz.udemy.spring.HibernateUtil;
+import pl.ymz.udemystart.HibernateUtil;
 
 import java.util.List;
 import java.util.Optional;
